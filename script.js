@@ -1,4 +1,3 @@
-// Lista de frutas y monedas asociadas (API CoinGecko)
 const frutas = [
   {
     nombre: "Manzana",
@@ -22,7 +21,6 @@ const frutas = [
   },
 ];
 
-// Mostrar cards de frutas con precios simulados
 function mostrarFrutas(dataCripto) {
   const contenedor = document.getElementById("frutas");
   contenedor.innerHTML = "";
@@ -33,16 +31,15 @@ function mostrarFrutas(dataCripto) {
     card.classList.add("card");
 
     card.innerHTML = `
-            <img src="${fruta.imagen}" alt="${fruta.nombre}">
-            <h3>${fruta.nombre}</h3>
-            <p>Precio simulado: $${precioUSD.toFixed(2)} / kg</p>
-        `;
+      <img src="${fruta.imagen}" alt="${fruta.nombre}">
+      <h3>${fruta.nombre}</h3>
+      <p>Precio simulado: $${precioUSD.toFixed(2)} / kg</p>
+    `;
 
     contenedor.appendChild(card);
   });
 }
 
-// Obtener cotizaciones de criptos desde CoinGecko
 function obtenerPreciosFrutas() {
   const ids = frutas.map((f) => f.simbolo).join(",");
   fetch(
@@ -53,18 +50,16 @@ function obtenerPreciosFrutas() {
     .catch((err) => console.error("Error al obtener precios:", err));
 }
 
-// Obtener clima desde OpenWeather
 function obtenerClima(ciudad) {
-  const apiKey = "TU_API_KEY_OPENWEATHER"; // Reemplaza con tu API KEY
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=${apiKey}`;
+  const url = `https://wttr.in/${encodeURIComponent(ciudad)}?format=j1`;
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       const info = `
-            📍 ${data.name}, ${data.sys.country}<br>
-            🌡️ ${data.main.temp}°C - ${data.weather[0].description}
-            `;
+        📍 ${ciudad}<br>
+        🌡️ ${data.current_condition[0].temp_C}°C - ${data.current_condition[0].weatherDesc[0].value}
+      `;
       document.getElementById("weatherInfo").innerHTML = info;
     })
     .catch((err) => {
@@ -74,7 +69,6 @@ function obtenerClima(ciudad) {
     });
 }
 
-// Evento al presionar "Consultar clima"
 document.getElementById("getWeather").addEventListener("click", () => {
   const ciudad = document.getElementById("locationInput").value.trim();
   if (ciudad) {
@@ -82,5 +76,4 @@ document.getElementById("getWeather").addEventListener("click", () => {
   }
 });
 
-// Cargar al inicio
 obtenerPreciosFrutas();
