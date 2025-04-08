@@ -1,22 +1,34 @@
-📦 Proyecto: Tienda de Frutas Inteligente
+# 🍎 Tienda de Frutas - Actividad 1
 
-👨‍💻 Tecnologías:
-- HTML5
-- CSS3 moderno (estilo Vercel)
-- JavaScript (vanilla)
-- API CoinGecko para cotización de criptomonedas
-- API OpenWeather para clima
+Este proyecto es una aplicación web desarrollada solo con **HTML, CSS y JavaScript**, sin backend, que simula una tienda de frutas interactiva.
 
-🚀 ¿Cómo usar?
-1. Abre `index.html` en tu navegador.
-2. Ingresa una ciudad para ver el clima local.
-3. Verás una lista de frutas con precios simulados dinámicamente.
+## 🚀 Características
 
-🔐 NOTA: Necesitas una API key válida de OpenWeather. Reemplaza `TU_API_KEY_OPENWEATHER` en el script.js.
+- Visualización de frutas con nombre, imagen y precio simulado.
+- Consulta del clima en tiempo real por ciudad.
+- Diseño responsivo moderno inspirado en Vercel.
+- 100% consumo de APIs gratuitas.
 
-🎯 Objetivo académico:
-Simular una tienda de frutas con datos reales en tiempo real usando APIs públicas. La cotización financiera de frutas se representa usando precios de criptomonedas como analogía.
+## 🌐 APIs utilizadas
 
-📚 APIs usadas:
-- https://www.coingecko.com/en/api
-- https://openweathermap.org/current
+- **[wttr.in](https://wttr.in/)**: Proporciona condiciones meteorológicas actuales sin necesidad de API key.
+- **[CoinGecko](https://www.coingecko.com/es/api)**: Se usa para simular los precios de frutas con base en criptomonedas reales.
+
+## 🛠️ Tecnologías
+
+- HTML5 semántico
+- CSS3 con diseño adaptativo
+- JavaScript moderno (fetch, modular, sin frameworks)
+
+## 📦 Cómo ejecutar
+
+1. Clona o descarga este repositorio.
+2. Abre `index.html` en tu navegador.
+3. Ingresa una ciudad para ver el clima.
+4. Explora los precios simulados de frutas.
+
+## 📄 Autor
+
+Edward Jair Ochoa Valero - Actividad 1 - Creación de una Aplicación WEB -
+Javascript
+Universidad Internacional de Valencia  

@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tienda de Frutas</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🍊 Tienda de Frutas Inteligente</h1>
-    <div id="weather">
-      <input type="text" id="locationInput" placeholder="Ingresa tu ciudad" />
-      <button id="getWeather">Consultar clima</button>
-      <div id="weatherInfo"></div>
+    <h1>🍎 Tienda de Frutas</h1>
+    <div class="clima">
+      <input type="text" id="locationInput" placeholder="Ingresa tu ciudad...">
+      <button id="getWeather">Ver Clima</button>
+      <div id="weatherInfo">☀️ Esperando ubicación...</div>
     </div>
   </header>
 
   <main>
-    <section class="frutas-container" id="frutas">
-      <!-- Cards de frutas se insertan aquí con JS -->
-    </section>
+    <section id="frutas" class="grid"></section>
   </main>
 
   <footer>
