@@ -1,35 +1,36 @@
 # Tienda de Frutas en Línea - Actividad 1
 
 ## Descripción
-Esta aplicación web frontend simula una tienda de frutas en línea con carrito de compras y se integra con tres APIs gratuitas:
+Esta aplicación web frontend simula una tienda de frutas en línea con un carrito de compras. Se integra con dos APIs gratuitas:
 
-1. **wttr.in**: Para obtener el clima actual (temperatura, condiciones, ubicación).
-2. **CoinGecko**: Para obtener precios reales de criptomonedas y simular el precio “bancario” de cada fruta.
-3. **Fruityvice API**: Para obtener información adicional (nombre, imagen, familia, nutrición) de cada fruta.
+1. **wttr.in:** Obtiene el clima actual (temperatura, condiciones y ubicación) a partir de una selección de ciudades predefinidas (ciudades de España y capitales de Latinoamérica).
+2. **CoinGecko API:** Obtiene cotizaciones reales de criptomonedas para simular el precio "bancario" de cada fruta.
 
-La aplicación muestra:
-- Una lista de frutas con imagen, nombre, precio simulado (en USD) y disponibilidad (influenciada por el clima).
-- Un modal con información detallada al hacer clic en una fruta.
-- Un carrito de compras para agregar y gestionar productos, almacenado en LocalStorage.
-- Permite al usuario ingresar su ciudad para obtener datos climáticos personalizados.
+La información de las frutas es estática e incluye:
+- Imagen, nombre, familia y valores nutricionales.
+- Precio simulado (USD) basado en la cotización de la moneda asignada.
+- Disponibilidad que varía dinámicamente según el clima obtenido.
 
-### Justificación
-El clima afecta la producción agrícola; por eso, la aplicación muestra cómo condiciones favorables (por ejemplo, clima soleado) aumentan la disponibilidad de frutas, mientras que condiciones adversas la reducen. Además, se utiliza el valor de criptomonedas (obtenido vía CoinGecko) para simular precios financieros reales, adaptando la “cotización en la banca” para el mercado de frutas.
+Además, la aplicación incluye:
+- Un **modal de detalle** de fruta con información completa y controles para seleccionar la cantidad a agregar al carrito.
+- Un **carrito de compras** donde se puede ver, aumentar o disminuir la cantidad de productos, y se guarda la información en LocalStorage.
+- Mensajes dinámicos en función del clima:
+  - "El clima influye en la producción agrícola; condiciones óptimas (soleado) aumentan la oferta, mientras que climas adversos la reducen." (Se actualiza según las condiciones reales).
 
 ## Instrucciones de Ejecución
 1. Descarga o clona el repositorio.
-2. Abre el archivo `index.html` en un navegador moderno.
-3. Ingresa una ciudad para consultar el clima.
-4. Explora la tienda: haz clic en cualquier fruta para ver detalles y usa el botón “Agregar al Carrito” para simular compras.
+2. Descomprime y abre el archivo `index.html` en un navegador moderno.
+3. Selecciona una ciudad predefinida del menú y haz clic en "Consultar clima".
+4. Explora la tienda: haz clic en una fruta para ver sus detalles y utiliza los controles de cantidad para agregar al carrito.
+5. Usa el botón "Carrito" para ver y gestionar los productos agregados.
 
 ## Tecnologías
 - HTML5 semántico
-- CSS3 (diseño responsivo e inspirado en Vercel)
-- JavaScript (modular, uso de fetch y LocalStorage)
+- CSS3 (diseño responsivo e inspirado en interfaces modernas)
+- JavaScript (uso de fetch, LocalStorage, manejo de eventos)
 - APIs utilizadas:
-  - [wttr.in](https://wttr.in/)
-  - [CoinGecko API](https://www.coingecko.com/en/api)
-  - [Fruityvice API](https://www.fruityvice.com/)
+  - [wttr.in](https://wttr.in/) para datos climáticos.
+  - [CoinGecko API](https://www.coingecko.com/en/api) para obtener cotizaciones.
 
 ## Autor
-Nombre del Alumno - Universidad XYZ
+Edward Jair Ochoa Valero - Universidad XYZ

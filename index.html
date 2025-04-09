@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda de Frutas en Línea</title>
+  <title>Tienda de Frutas - FrutaFácil 🍊</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Cabecera de la tienda -->
   <header>
     <div class="header-container">
-      <h1>🍎 Tienda de Frutas en Línea</h1>
+      <h1>🍎 FrutaFácil - Tu tienda de frutas en línea</h1>
       <div class="controls">
-        <!-- Consulta de clima -->
+        <!-- Selección de ciudad predefinida -->
         <div class="clima">
-          <input type="text" id="locationInput" placeholder="Ingresa tu ciudad...">
+          <select id="locationSelect">
+            <option value="Madrid">Madrid (España)</option>
+            <option value="Barcelona">Barcelona (España)</option>
+            <option value="Buenos Aires">Buenos Aires (Argentina)</option>
+            <option value="Santiago">Santiago (Chile)</option>
+            <option value="Bogotá">Bogotá (Colombia)</option>
+            <option value="Lima">Lima (Perú)</option>
+          </select>
           <button id="btnGetWeather">Consultar clima</button>
         </div>
         <!-- Botón para abrir el carrito -->
@@ -22,7 +29,9 @@
       </div>
       <div id="weatherDisplay" class="weather-display">
         <p id="weatherInfo">Esperando datos del clima...</p>
-        <small>El clima influye en la producción agrícola; condiciones óptimas (soleado) aumentan la oferta, mientras que climas adversos la reducen.</small>
+        <small id="weatherMessage">
+          El clima influye en la producción agrícola; condiciones óptimas aumentan la oferta, mientras que climas adversos la reducen.
+        </small>
       </div>
     </div>
   </header>
@@ -39,7 +48,7 @@
     <div class="modal-content">
       <span id="modalClose" class="modal-close">&times;</span>
       <div id="modalBody">
-        <!-- Se llenará con información al hacer clic en la tarjeta de fruta -->
+        <!-- Se llenará con información y controles de cantidad -->
       </div>
     </div>
   </div>
@@ -52,6 +61,7 @@
       <ul id="cartItems">
         <!-- Lista de productos agregados -->
       </ul>
+      <p id="cartTotal">Total: $0</p>
       <button id="btnClearCart">Vaciar Carrito</button>
     </div>
   </div>
