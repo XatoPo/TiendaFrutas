@@ -12,6 +12,8 @@ const fruitsStore = document.getElementById("fruitsStore")
 const weatherInfoElem = document.getElementById("weatherInfo")
 const weatherIconElem = document.getElementById("weatherIcon")
 const weatherMessageElem = document.getElementById("weatherMessage")
+const weatherMessageContainer = document.getElementById("weatherMessageContainer")
+const weatherToggle = document.getElementById("weatherToggle")
 const modal = document.getElementById("modal")
 const modalClose = document.getElementById("modalClose")
 const modalBody = document.getElementById("modalBody")
@@ -24,6 +26,11 @@ export function actualizarInfoClima(climaData) {
   weatherIconElem.textContent = climaData.icon || "🌤️"
   weatherInfoElem.textContent = `${climaData.ciudad}: ${climaData.temp}°C - ${climaData.description}`
   weatherMessageElem.textContent = generarMensajeClima()
+
+  // En móvil, colapsar el mensaje por defecto
+  if (window.innerWidth <= 768) {
+    weatherMessageContainer.classList.add("collapsed")
+  }
 }
 
 /**
@@ -36,7 +43,7 @@ export function mostrarFrutas(datosPrecios) {
 
   FRUTAS.forEach((fruta) => {
     const coinPrice = datosPrecios[fruta.coin]?.usd || 100 // Valor por defecto si no hay datos
-    const precioFruta = calcularPrecio(coinPrice, disponibilidad, fruta.factorClima)
+    const precioFruta = calcularPrecio(coinPrice, disponibilidad, fruta.factorClima, fruta.precioBase)
 
     // Crear tarjeta de fruta
     const card = document.createElement("div")
@@ -58,7 +65,7 @@ export function mostrarFrutas(datosPrecios) {
       <img src="${fruta.imagen}" alt="${fruta.nombre}" class="fruit-image">
       <div class="fruit-content">
         <h3 class="fruit-title">${fruta.nombre}</h3>
-        <p class="fruit-price">$${precioFruta} USD</p>
+        <p class="fruit-price">${precioFruta} USD</p>
         <span class="availability-badge ${availabilityClass}">
           Disponibilidad: ${disponibilidad}
         </span>
@@ -119,7 +126,7 @@ export function abrirModal(fruta, disponibilidad) {
       
       <div class="fruit-detail-info">
         <p><strong>Familia:</strong> ${fruta.familia}</p>
-        <p><strong>Precio:</strong> $${fruta.precio} USD</p>
+        <p><strong>Precio:</strong> ${fruta.precio} USD</p>
         <p><strong>Disponibilidad:</strong> ${disponibilidad}</p>
       </div>
       
@@ -256,4 +263,11 @@ export function mostrarCargando() {
       <p>Cargando frutas...</p>
     </div>
   `
+}
+
+/**
+ * Alterna la visibilidad del mensaje del clima
+ */
+export function toggleWeatherMessage() {
+  weatherMessageContainer.classList.toggle("collapsed")
 }
