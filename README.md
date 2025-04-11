@@ -13,7 +13,7 @@ La información de las frutas es estática e incluye:
 
 Además, la aplicación incluye:
 - Un **modal de detalle** de fruta con información completa y controles para seleccionar la cantidad a agregar al carrito.
-- Un **carrito de compras** donde se puede ver, aumentar o disminuir la cantidad de productos, y se guarda la información en LocalStorage.
+- Un **carrito de compras** donde se puede ver, aumentar o disminuir la cantidad de productos.
 - Mensajes dinámicos en función del clima:
   - "El clima influye en la producción agrícola; condiciones óptimas (soleado) aumentan la oferta, mientras que climas adversos la reducen." (Se actualiza según las condiciones reales).
 
@@ -27,7 +27,7 @@ Además, la aplicación incluye:
 ## Tecnologías
 - HTML5 semántico
 - CSS3 (diseño responsivo e inspirado en interfaces modernas)
-- JavaScript (uso de fetch, LocalStorage, manejo de eventos)
+- JavaScript (uso de fetch, APIs y DOM)
 - APIs utilizadas:
   - [wttr.in](https://wttr.in/) para datos climáticos.
   - [CoinGecko API](https://www.coingecko.com/en/api) para obtener cotizaciones.
